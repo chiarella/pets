@@ -12,17 +12,17 @@ import org.springframework.stereotype.Service;
 import br.com.pet.domain.Cliente;
 import br.com.pet.dto.ClienteDTO;
 import br.com.pet.mapper.PetMapper;
-import br.com.pet.repository.PetRepository;
+import br.com.pet.repository.ClienteRepository;
 
 @Service
 @Transactional
-public class PetServiceImp implements PetService{
+public class ClienteServiceImp implements ClienteService{
 
 	@Autowired
 	private PetMapper petMapper;
 
 	@Autowired
-	private PetRepository repository;
+	private ClienteRepository repository;
 
 	public List<ClienteDTO> buscaTodos() {
 		List<Cliente> domains = repository.findAll();

@@ -17,13 +17,13 @@ import com.google.gson.Gson;
 
 import br.com.pet.dto.ClienteDTO;
 import br.com.pet.handler.ErrorResponse;
-import br.com.pet.service.PetServiceImp;
+import br.com.pet.service.ClienteServiceImp;
 
 @RestController
-public class PetController {
+public class ClienteController {
 
 	@Autowired
-	private PetServiceImp service;
+	private ClienteServiceImp service;
 
 //	@PostMapping("/save")
 //	public void save(@RequestBody ClienteDTO cliente) {

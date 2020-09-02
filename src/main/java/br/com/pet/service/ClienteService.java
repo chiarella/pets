@@ -11,7 +11,7 @@ import br.com.pet.dto.ClienteDTO;
 
 @Service
 @Transactional
-public interface PetService {
+public interface ClienteService {
 	
 	List<ClienteDTO> buscaTodos();
 	

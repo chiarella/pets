@@ -6,15 +6,13 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
-import br.com.pet.domain.Cliente;
+import br.com.pet.domain.Pet;
 
 @Repository
-public interface PetRepository extends JpaRepository<Cliente, Long>{
-	
-	
+public interface PetsRepository extends JpaRepository<Pet, Long>{
+
 	@Modifying
-	@Query("DELETE FROM Cliente c WHERE c.id = :idCliente")
-	void deletarCliente(@Param("id") Long idCliente);
-	
+	@Query("DELETE FROM Pet p WHERE p.id = :idPet")
+	void deletarPet(@Param("id") Long idPet);
 
 }
