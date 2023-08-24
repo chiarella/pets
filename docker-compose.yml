@@ -1,0 +1,24 @@
+version: '3.9'
+volumes:
+  my-db:  
+services:
+  db:
+    image: mysql:8.0.33
+    container_name: mysql-pets
+    restart: always    
+    environment:
+      MYSQL_DATABASE: 'pets'
+      MYSQL_USER: 'chia'
+      MYSQL_PASSWORD: 'chia'
+      MYSQL_ROOT_PASSWORD: 'chia -p3306:3306 -d mysql/mysql-server:8.0.33' 
+    ports:
+      - '3306:3306'
+    expose:
+      - '3306'  
+    volumes:
+      - my-db:/var/lib/mysql
+      - .setup.sql:/docker-entrypoint-initdb.d/setup.sql    
+networks: 
+  mysql-compose-network:
+    driver: bridge
+  
